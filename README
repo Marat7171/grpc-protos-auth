@@ -1,0 +1,17 @@
+# Устанавливаем buf
+go install github.com/bufbuild/buf/cmd/buf@latest
+
+# Создаём конфиг
+cat <<EOF > buf.gen.yaml
+version: v1
+plugins:
+  - name: go
+    out: gen/go
+    opt: paths=source_relative
+  - name: go-grpc
+    out: gen/go
+    opt: paths=source_relative
+EOF
+
+# Генерируем код
+buf generate proto
