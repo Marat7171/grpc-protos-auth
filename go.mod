@@ -1,4 +1,4 @@
-module grpc-protos-auth/marat7171
+module github.com/grpc-protos-auth/marat7171
 
 go 1.24.0
 
